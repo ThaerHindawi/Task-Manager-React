@@ -1,0 +1,8 @@
+.layout-wrapper {
+  display: flex;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
