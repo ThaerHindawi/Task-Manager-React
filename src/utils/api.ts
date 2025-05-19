@@ -1,8 +1,9 @@
 import axios from "axios";
 import type { ITask } from "../interfaces/ITask";
+import API_BASE_URL from "./API_URL";
 
-const API_BASE_URL = "http://127.0.0.1:8000/api";
-const TASKS_URL = `${API_BASE_URL}/tasks`;
+
+const TASKS_URL = `${API_BASE_URL("tasks")}`;
 
 export const getTasks = async (): Promise<ITask[]> => {
   const res = await axios.get(TASKS_URL);
