@@ -152,12 +152,12 @@ function Tasks() {
                 mutate(API_BASE_URL("/tasks/"));
               }
             }}
-            className="py-4"
+            className="py-4 text-black"
           >
             <div className="mb-4">
               <label
                 htmlFor="title"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-300"
               >
                 Title
               </label>
@@ -178,7 +178,7 @@ function Tasks() {
             <div className="mb-4">
               <label
                 htmlFor="description"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-300"
               >
                 Description
               </label>
@@ -214,7 +214,7 @@ function Tasks() {
               <div className="ml-3 text-sm">
                 <label
                   htmlFor="is_completed"
-                  className="font-medium text-gray-700"
+                  className="font-medium text-gray-300"
                 >
                   Completed
                 </label>
@@ -243,11 +243,11 @@ function Tasks() {
       <dialog ref={addModal} id="add_modal" className="modal">
         <div className="modal-box w-11/12 max-w-5xl">
           <h3 className="font-bold text-lg">Add Task</h3>
-          <form onSubmit={handleAddTask} className="py-4">
+          <form onSubmit={handleAddTask} className="py-4 text-black">
             <div className="mb-4">
               <label
                 htmlFor="new-title"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-300"
               >
                 Title
               </label>
@@ -266,7 +266,7 @@ function Tasks() {
             <div className="mb-4">
               <label
                 htmlFor="new-description"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-300"
               >
                 Description
               </label>
@@ -302,7 +302,7 @@ function Tasks() {
               <div className="ml-3 text-sm">
                 <label
                   htmlFor="new-is-completed"
-                  className="font-medium text-gray-700"
+                  className="font-medium text-gray-300"
                 >
                   Completed
                 </label>
