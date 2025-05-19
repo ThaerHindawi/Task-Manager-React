@@ -152,7 +152,7 @@ function Tasks() {
                 mutate(API_BASE_URL("/tasks/"));
               }
             }}
-            className="py-4 text-black"
+            className="py-4 text-black dark:text-white"
           >
             <div className="mb-4">
               <label
@@ -243,7 +243,7 @@ function Tasks() {
       <dialog ref={addModal} id="add_modal" className="modal">
         <div className="modal-box w-11/12 max-w-5xl">
           <h3 className="font-bold text-lg">Add Task</h3>
-          <form onSubmit={handleAddTask} className="py-4 text-black">
+          <form onSubmit={handleAddTask} className="py-4 text-black dark:text-white">
             <div className="mb-4">
               <label
                 htmlFor="new-title"
