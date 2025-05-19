@@ -1,54 +1,98 @@
-# React + TypeScript + Vite
+# Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern task management application built with React, TypeScript, and Tailwind CSS. This application provides a clean and intuitive interface for managing your tasks.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Create, read, update, and delete tasks
+- Task completion status tracking
+- Responsive design that works on all devices
+- Dark mode support
+- Real-time updates using SWR
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 18
+- TypeScript
+- Tailwind CSS
+- SWR for data fetching
+- DaisyUI for UI components
+- Vite for build tooling
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm
+- A running backend API server (see API section)
+
+### Installation
+
+1.Clone the repository:
+
+```bash
+git clone https://github.com/ThaerHindawi/Task-Manager-React.git
+cd Task-Manager-React
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2.Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+3.Create a `.env` file in the root directory and add your API URL:
+
+```bash
+VITE_API_URL=http://127.0.0.1:8000/api
+```
+
+4.Start the development server:
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`
+
+## API Integration
+
+This application requires a backend API that provides the following endpoints:
+
+- `GET /api/tasks` - List all tasks
+- `GET /api/tasks/:id` - Get a single task
+- `POST /api/tasks` - Create a new task
+- `PUT /api/tasks/:id` - Update a task
+- `DELETE /api/tasks/:id` - Delete a task
+
+The API should return tasks in the following format:
+
+```typescript
+interface Task {
+  id: number;
+  title: string;
+  description: string;
+  is_completed: number;
+  created_at: string;
+  updated_at: string;
+}
+```
+
+## Building for Production
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist` directory.
+
+## Author
+
+Created by [Thaer Hendawi](https://thaerhendawi.com)
+
+## License
+
+This project is open source and available under the MIT License.
